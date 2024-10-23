@@ -1,0 +1,289 @@
+/* Global Styles */
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in the element's width/height */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f1f1f1;
+  user-select: none; /* Prevents users from selecting text */
+}
+
+body {
+  /* Sets a background image for the body */
+  background-image: url("https://images.unsplash.com/photo-1558427405-d8dcc49ae7c2?q=80&w=1510&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+/* HEADER Section */
+header {
+  height: auto;
+  background-color: rgba(135, 135, 135, 0.4); /* Semi-transparent background */
+  box-shadow: inset 0 0 1rem #f2f2f2f2; /* Creates inner shadow */
+  backdrop-filter: blur(100px); /* Applies blur effect */
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
+
+.header-logo {
+  flex: 1; /* Takes up space in flex layout */
+}
+
+.header-logo {
+  color: #f1f1f1;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem; /* Spacing between letters */
+}
+
+.header-logo p {
+  letter-spacing: 0.7rem; /* More spacing for specific text */
+}
+
+.header-menu {
+  flex: 3; /* Takes more space in flex layout */
+}
+
+.header-menu > ul {
+  display: flex;
+  justify-content: space-evenly; /* Even spacing between items */
+  align-items: center;
+}
+
+.header-menu ul > li,
+a {
+  list-style-type: none; /* Removes bullet points from list items */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  letter-spacing: 0.1rem;
+}
+
+.header-menu ul > input {
+  padding: 0.5rem;
+  flex: 0.3;
+  border: none;
+  outline: none; /* Removes default browser outline on focus */
+  border-radius: 12px;
+  color: #f1f1f1f1;
+  background-color: transparent;
+  font-size: 1.1rem;
+  cursor: pointer; /* Makes cursor a pointer */
+  box-shadow: inset 0 0 1rem #f1f1f1;
+}
+
+.header-menu ul > input::placeholder {
+  color: #f1f1f1; /* Styles the placeholder text */
+}
+
+/* Main Layout - Container for content sections */
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr 300px; /* Grid with auto, flexible, and fixed column widths */
+  grid-template-rows: repeat(3, auto); /* 3 rows with automatic height */
+  gap: 0;
+  padding: none;
+  background-color: rgba(135, 135, 135, 0.4); /* Semi-transparent background */
+  box-shadow: inset 0 0 1rem #f2f2f2f2;
+  backdrop-filter: blur(100px); /* Applies blur effect */
+}
+
+/* Sidebar Styles */
+.container > #aside {
+  color: #f1f1f1;
+  padding: 2rem 10px; /* Padding for the aside section */
+}
+
+/* Related Topics Section */
+#related-topics {
+  order: -1; /* Places it at the top of its container */
+  max-height: 95vh; /* Limits the height */
+  overflow-y: scroll; /* Enables vertical scrolling */
+}
+
+#related-topics h3 {
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+#related-topics ul li {
+  list-style-type: none;
+  padding: 1rem 0;
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+}
+
+#related-topics ul li a {
+  color: rgba(241, 241, 241, 0.6); /* Lighter text color */
+}
+
+/* Scrollbar Styling */
+#related-topics::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 12px; /* Rounded scrollbar */
+}
+
+#related-topics::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.375rem rgb(79, 78, 78); /* Inner shadow for scrollbar track */
+  border-radius: 0.8rem;
+}
+
+#related-topics::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 1rem #f1f1f1; /* Inner shadow for scrollbar thumb */
+  outline: none;
+  border-radius: 0.8rem;
+}
+
+/* FORM Section */
+#form legend {
+  color: #f1f1f1;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+#form input {
+  min-width: 100%;
+  padding: 1rem 10px;
+  margin: 8px auto;
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 700;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: inset 0 0 2rem #f1f1f1; /* Inner shadow for input fields */
+}
+
+#form input::placeholder {
+  color: #000; /* Placeholder text color */
+}
+
+#form textarea {
+  font-size: 1rem;
+  resize: none; /* Disables resizing of the textarea */
+  min-width: 100%;
+  color: #000;
+  font-weight: 700;
+  outline: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 2rem #f1f1f1;
+}
+
+#form textarea::placeholder {
+  padding: 0.5rem;
+  color: #000;
+}
+
+#form button {
+  min-width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.8rem 0;
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  background-color: transparent;
+  border: none;
+  box-shadow: inset 0 0 5rem #f1f1f1; /* Button shadow */
+}
+
+/* Content Card Grid Layout */
+.content-card {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+  grid-template-rows: repeat(auto, 1fr); /* Auto-rows */
+  row-gap: 15px;
+  column-gap: 20px;
+}
+
+/* Card Styles */
+.card-box {
+  border-radius: 12px;
+  backdrop-filter: blur(4px); /* Blur effect */
+  display: flex;
+  flex-direction: column; /* Vertical stacking */
+  row-gap: 10px; /* Space between items */
+}
+
+.card-box img {
+  object-fit: cover; /* Ensures image covers the container */
+  width: 100%;
+  border-radius: 12px;
+  filter: contrast(120%) saturate(120%); /* Increases contrast and saturation */
+}
+
+.card-box > a > .movie-detail {
+  padding: 0.2rem 0.5rem;
+}
+
+/* Footer Section */
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4; /* Spans all grid columns */
+  padding: 1rem;
+  text-align: center; /* Centers the footer text */
+}
+
+.footer p {
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  text-shadow: 0 0 1rem gray; /* Text shadow effect */
+}
+
+/* Media Queries for Mobile Devices */
+@media (min-width: 319px) and (max-width: 480px) {
+  .header-menu ul li {
+    display: none; /* Hides menu items */
+  }
+
+  .header-menu ul input {
+    padding: 1rem 0;
+  }
+
+  .header-logo > h2 {
+    font-size: 1.5rem;
+  }
+
+  .header-logo > p {
+    letter-spacing: 0.4rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Switches to column layout */
+  }
+
+  #aside {
+    order: 1;
+    text-align: center;
+  }
+
+  #aside > #related-topics > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+  }
+
+  #form {
+    padding: 0.5rem;
+    outline: none;
+  }
+
+  .content {
+    order: 0;
+    padding: 1rem;
+    text-align: justify;
+  }
+
+  .footer {
+    order: 2;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+
+  .content-card {
+    grid-template-columns: 1fr; /* 1-column layout */
+  }
+}
